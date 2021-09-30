@@ -1,0 +1,19 @@
+
+
+.menu-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 100px;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+.menu-items {
+    display: flex;
+    height: 40px;
+    width: 400px;
+    /* border: 1px solid red; */
+    justify-content: space-around;
+}

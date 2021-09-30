@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "manmeetdevgun",
+            "dob": "30/01/1994",
+            "gender": "Male",
+            "accountType": "Savings",
+            "accountNumber": 1234,
+            "city": "Punjab",
+            "district": "Amritsar",
+            "password": "1234"
+        },
+        {
+            "id": 2,
+            "username": "manmeetdevgun01",
+            "dob": "30/01/2000",
+            "gender": "Female",
+            "accountType": "Current",
+            "accountNumber": 12345,
+            "city": "Punjab",
+            "district": "Amritsar",
+            "password": "12345"
+        }
+    ],
+    "transactions": [
+        {
+            "txId": 1,
+            "userId": 1,
+            "type": "WITHDRAWL",
+            "amount": 100,
+            "date": "12/12/1991",
+            "description": "Some Withdrawl"
+        },
+        {
+            "txId": 2,
+            "userId": 1,
+            "type": "DEPOSIT",
+            "amount": 1000,
+            "date": "12/12/1992",
+            "description": "Some Deposit"
+        }
+    ]
+}
