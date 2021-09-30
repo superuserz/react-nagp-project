@@ -24,21 +24,21 @@
         }
     ],
     "transactions": [
-        {
-            "txId": 1,
-            "userId": 1,
-            "type": "WITHDRAWL",
-            "amount": 100,
-            "date": "12/12/1991",
-            "description": "Some Withdrawl"
-        },
-        {
-            "txId": 2,
-            "userId": 1,
-            "type": "DEPOSIT",
-            "amount": 1000,
-            "date": "12/12/1992",
-            "description": "Some Deposit"
-        }
+        // {
+        //     "id": 0,
+        //     "userId": 1,
+        //     "type": "WITHDRAWL",
+        //     "amount": 100,
+        //     "date": "2021-09-30T22:17:01.542Z",
+        //     "description": "Some Withdrawl"
+        // },
+        // {
+        //     "id": 1,
+        //     "userId": 1,
+        //     "type": "DEPOSIT",
+        //     "amount": 1000,
+        //     "date": "2021-09-30T22:17:01.542Z",
+        //     "description": "Some Deposit"
+        // }
     ]
 }

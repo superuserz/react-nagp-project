@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './TransactionDialog.css'
 import { RadioButton } from 'primereact/radiobutton';
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button';
+import * as constants from '../../../shared/constants/AppConstants';
+import { userService } from '../../../api/UserService';
+import { Messages } from 'primereact/messages';
 
 
 function TransactionDialog(props) {
+    const messages = useRef(null);
+
+    const [userprofile, setUserprofile] = useState({});
+    useEffect(() => {
+
+        const data = JSON.parse(sessionStorage.getItem(constants.USER_DATA_KEY));
+        setUserprofile((prevVal) => {
+            return data;
+        })
+    }, [])
 
     const [type, setType] = useState('DEPOSIT');
-    const [amount, setAmount] = useState();
+    const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState('');
 
     const handleCancelAction = () => {
@@ -16,22 +29,21 @@ function TransactionDialog(props) {
     }
 
     const executeTransactionRequest = () => {
-        const requestPayload = buildTransactionRequest();
-        //After this send payload to JSON SERVER.
-    }
-
-    const buildTransactionRequest = () => {
-        const payload = {
+        const obj = {
+            "userId": userprofile.id,
             "type": type,
             "amount": amount,
             "date": new Date(),
             "description": description
         }
-        console.log(payload);
+        userService.executeTransaction(obj);
+        messages.current.show({ severity: 'success', summary: 'Transaction Successful' });
+
     }
 
     return (
         <div className="centered-dialog">
+            <Messages ref={messages}></Messages>
             <div className="header">
                 <h3>Make your Transaction</h3>
             </div>

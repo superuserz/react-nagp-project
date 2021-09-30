@@ -8,7 +8,6 @@ import Profile from './pages/profile/Profile';
 import { useEffect, useState } from 'react';
 import * as constants from './shared/constants/AppConstants';
 import { Redirect } from 'react-router';
-import NotFound from './pages/default/NotFound';
 
 
 

@@ -13,6 +13,11 @@ function Profile() {
         })
     }, [])
 
+    const getDOB = () => {
+        const dob = new Date(userprofile.dob);
+        return dob.getDate() + '/' + dob.getMonth() + '/' + dob.getFullYear();
+    }
+
 
     return (
         <div className="profile-container">
@@ -21,31 +26,31 @@ function Profile() {
                 <header className="profile-header">
                     <h3>My Profile</h3>
                 </header>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>User Name</label>
                     <label>{userprofile.username}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>Date of Birth</label>
-                    <label>{userprofile.dob}</label>
+                    <label>{getDOB()}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>Gender</label>
                     <label>{userprofile.gender}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>Account Type</label>
                     <label>{userprofile.accountType}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>Account Number</label>
                     <label>{userprofile.accountNumber}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>City</label>
                     <label>{userprofile.city}</label>
                 </div>
-                <div class="profile-data-container">
+                <div className="profile-data-container">
                     <label>District</label>
                     <label>{userprofile.district}</label>
                 </div>

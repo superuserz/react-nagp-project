@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Register.css'
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -10,16 +10,11 @@ import { Password } from 'primereact/password';
 import { useFormik } from 'formik';
 import { Button } from 'primereact/button';
 import * as constants from '../../shared/constants/AppConstants'
-
-
-//EFFECTS
-
-
-const BLANK = '';
-
+import { userService } from '../../api/UserService';
+import { Messages } from 'primereact/messages';
 
 function Register() {
-
+    const messages = useRef(null);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -78,8 +73,8 @@ function Register() {
             setFormData(data);
             setShowMessage(true);
             formik.resetForm();
-            window.alert('Registeration Form Submitted');
-            //Logic for Login and Routing to Welcome Page
+            userService.registerUser(data);
+            messages.current.show({ severity: 'success', summary: 'User Registration Successfull. Kindly proceed to Login' });
         }
     });
 
@@ -90,6 +85,7 @@ function Register() {
 
     return (
         <div>
+            <Messages ref={messages}></Messages>
             <form onSubmit={formik.handleSubmit} className="p-fluid">
                 <div className="registration-container">
                     <div className="registration-form-container">
@@ -100,7 +96,7 @@ function Register() {
                         </div>
                         <div className="registration-form-input-container">
                             <h4>Date of Birth</h4>
-                            <Calendar id="dob" name="dob" value={formik.values.dob} onChange={formik.handleChange}></Calendar>
+                            <Calendar id="dob" name="dob" dateFormat="dd/mm/yy" value={formik.values.dob} onChange={formik.handleChange} monthNavigator yearNavigator yearRange="1900:2021" />
                             {getFormErrorMessage('dob')}
                         </div>
                         <div className="registration-form-input-container">
@@ -139,7 +135,7 @@ function Register() {
                         </div>
 
                         <div className="registration-form-input-container">
-                            <h4></h4>
+                            <hr></hr>
                             <Button type="submit" label="Register" className="p-mt-2" />
                         </div>
                     </div>

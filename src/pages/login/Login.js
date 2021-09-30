@@ -67,13 +67,7 @@ function Login() {
                     sessionStorage.setItem(constants.LOGGED_IN_KEY, 'true');
                     sessionStorage.removeItem(constants.USER_DATA_KEY);
                     sessionStorage.setItem(constants.USER_DATA_KEY, JSON.stringify(user));
-                    const currentUser = JSON.parse(sessionStorage.getItem(constants.USER_DATA_KEY));
-
-                    console.log(currentUser);
-
-                    setRedirect((prevVal) => {
-                        return true;
-                    });
+                    setRedirect(true);
                 } else {
                     window.alert(constants.INCORRECT_PASSWORD);
                 }
@@ -98,7 +92,7 @@ function Login() {
                             {getFormErrorMessage('password')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4></h4>
+                            <hr></hr>
                             <Button type="submit" label="Login" className="p-mt-2" />
                             {renderRedirect()}
                         </div>
