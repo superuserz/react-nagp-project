@@ -10,7 +10,7 @@ function TransactionOverlay(props) {
 
     return (
         <div id="transaction-overlay" className={props.klass}>
-            <TransactionDialog balance={props.balance} handleCancelAction={hideTransactionOverlay}></TransactionDialog>
+            <TransactionDialog balance={props.balance} profile={props.profile} handleCancelAction={hideTransactionOverlay}></TransactionDialog>
         </div >
     )
 }

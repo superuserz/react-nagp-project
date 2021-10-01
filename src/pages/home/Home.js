@@ -71,19 +71,20 @@ function Home(props) {
 
     return (
         <div>
+            <header>
+                <h1>Welcome, {userprofile.username}</h1>
+            </header>
+
             <div className="menu-container">
-                <header>
-                    <h1>Welcome, {userprofile.username}</h1>
-                </header>
                 <div className="menu-items">
                     <Button type="submit" label="My Profile" className="p-mt-2" onClick={dispatchProfile} />
                     <Button type="submit" label="Withdraw/ Deposit" className="p-mt-2 p-button-success" onClick={showTransactionOverlay} />
                     <Button type="submit" label="Logout" className="p-mt-2 p-button-danger" onClick={handleLogout} />
-                    <TransactionOverlay hideTransactionOverlay={hideTransactionOverlay} klass={klass} balance={balance}></TransactionOverlay>
+                    <TransactionOverlay hideTransactionOverlay={hideTransactionOverlay} profile={userprofile} klass={klass} balance={balance}></TransactionOverlay>
                 </div>
             </div>
             <Balance balance={balance}></Balance>
-            <TransactionDashboard transactions={transactions}></TransactionDashboard>
+            <TransactionDashboard transactions={transactions} profile={userprofile}></TransactionDashboard>
         </div>
     )
 }

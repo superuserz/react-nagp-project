@@ -1,25 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './TransactionDialog.css'
 import { RadioButton } from 'primereact/radiobutton';
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button';
-import * as constants from '../../../shared/constants/AppConstants';
 import { userService } from '../../../api/UserService';
 import { Messages } from 'primereact/messages';
 
 
 function TransactionDialog(props) {
     const messages = useRef(null);
-
-    const [userprofile, setUserprofile] = useState({});
-    useEffect(() => {
-
-        const data = JSON.parse(sessionStorage.getItem(constants.USER_DATA_KEY));
-        setUserprofile((prevVal) => {
-            return data;
-        })
-    }, [])
-
     const [type, setType] = useState('DEPOSIT');
     const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState('');
@@ -30,7 +19,7 @@ function TransactionDialog(props) {
 
     const executeTransactionRequest = () => {
         const obj = {
-            "userId": userprofile.id,
+            "userId": props.profile.id,
             "type": type,
             "amount": Number(amount),
             "date": new Date(),
@@ -45,7 +34,7 @@ function TransactionDialog(props) {
         <div className="centered-dialog">
             <Messages ref={messages}></Messages>
             <div className="header">
-                <h3>Make your Transaction</h3>
+                <h3>Make your Transaction, {props.profile.username}</h3>
             </div>
             <div className="main">
                 <label>Select Transaction type</label>

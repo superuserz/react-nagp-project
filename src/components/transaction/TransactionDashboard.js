@@ -22,7 +22,7 @@ function TransactionDashboard(props) {
         <div className="dashboard-flex-wrapper">
             <div className="dashboard-container">
                 <div class="dashboard-header">
-                    <h3>My Transactions</h3>
+                    <h3>Here are you Transactions, {props.profile.username}</h3>
                     <InputText type="search" value={globalFilter} onChange={(e) => setGlobalFilter(e.target.value)} placeholder="Search By Description" />
                 </div>
                 <DataTable value={props.transactions}

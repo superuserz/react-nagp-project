@@ -3,6 +3,8 @@
     height: 3rem;
     background-color: #0b213f;
     padding: 0 1%;
+    position: fixed;
+    z-index: 10000;
   }
   
   .header nav {

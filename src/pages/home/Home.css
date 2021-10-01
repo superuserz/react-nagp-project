@@ -6,8 +6,7 @@
     align-items: center;
     /* border: 1px solid black; */
     height: 100px;
-    padding: 1%;
-    margin-top: 1%;
+    padding-top: 2%;
 }
 
 .menu-items {
@@ -16,4 +15,5 @@
     width: 400px;
     /* border: 1px solid red; */
     justify-content: space-around;
+    margin-top: 3%;
 }
