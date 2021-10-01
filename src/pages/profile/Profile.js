@@ -15,7 +15,7 @@ function Profile() {
 
     const getDOB = () => {
         const dob = new Date(userprofile.dob);
-        return dob.getDate() + '/' + dob.getMonth() + '/' + dob.getFullYear();
+        return dob.toLocaleDateString();
     }
 
 

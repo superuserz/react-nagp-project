@@ -1,44 +1,394 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "manmeetdevgun",
-            "dob": "30/01/1994",
-            "gender": "Male",
-            "accountType": "Savings",
-            "accountNumber": 1234,
-            "city": "Punjab",
-            "district": "Amritsar",
-            "password": "1234"
-        },
-        {
-            "id": 2,
-            "username": "manmeetdevgun01",
-            "dob": "30/01/2000",
-            "gender": "Female",
-            "accountType": "Current",
-            "accountNumber": 12345,
-            "city": "Punjab",
-            "district": "Amritsar",
-            "password": "12345"
-        }
-    ],
-    "transactions": [
-        // {
-        //     "id": 0,
-        //     "userId": 1,
-        //     "type": "WITHDRAWL",
-        //     "amount": 100,
-        //     "date": "2021-09-30T22:17:01.542Z",
-        //     "description": "Some Withdrawl"
-        // },
-        // {
-        //     "id": 1,
-        //     "userId": 1,
-        //     "type": "DEPOSIT",
-        //     "amount": 1000,
-        //     "date": "2021-09-30T22:17:01.542Z",
-        //     "description": "Some Deposit"
-        // }
-    ]
+  "users": [
+    {
+      "username": "manmeetdevgun",
+      "dob": "1994-01-29T18:30:00.000Z",
+      "gender": "M",
+      "accountType": "Savings",
+      "accountNumber": 1234,
+      "city": "Punjab",
+      "district": "Amritsar",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 1
+    },
+    {
+      "username": "manmeetdevgun",
+      "dob": "1994-10-29T18:30:00.000Z",
+      "gender": "F",
+      "accountType": "Current",
+      "accountNumber": 12345,
+      "city": "Punjab",
+      "district": "Meerut",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 2
+    },
+    {
+      "username": "ranjeetkaur",
+      "dob": "2004-10-11T18:30:00.000Z",
+      "gender": "F",
+      "accountType": "Savings",
+      "accountNumber": 123456,
+      "city": "Punjab",
+      "district": "Amritsar",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 3
+    }
+  ],
+  "transactions": [
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 10000,
+      "date": "2021-10-01T08:42:58.919Z",
+      "description": "Salary",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "type": "DEPOSIT",
+      "amount": "10000",
+      "date": "2021-10-01T08:56:19.796Z",
+      "description": "Salary",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "type": "WITHDRAWL",
+      "amount": 100,
+      "date": "2021-10-01T08:56:26.199Z",
+      "description": "Salary",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "type": "WITHDRAWL",
+      "amount": 99,
+      "date": "2021-10-01T09:40:30.545Z",
+      "description": "Eating",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "type": "WITHDRAWL",
+      "amount": 0,
+      "date": "2021-10-01T09:43:50.056Z",
+      "description": "Eating",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "type": "WITHDRAWL",
+      "amount": 1000,
+      "date": "2021-10-01T09:44:21.184Z",
+      "description": "Eating",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T09:54:25.987Z",
+      "description": "",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "type": "DEPOSIT",
+      "amount": 100000,
+      "date": "2021-10-01T10:21:07.526Z",
+      "description": "Salary",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T11:04:13.587Z",
+      "description": "",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "type": "DEPOSIT",
+      "amount": 10,
+      "date": "2021-10-01T11:05:28.750Z",
+      "description": "Salary",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 12321,
+      "date": "2021-10-01T11:26:42.870Z",
+      "description": "dascf",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 1222,
+      "date": "2021-10-01T12:14:39.020Z",
+      "description": "something",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 1111,
+      "date": "2021-10-01T12:15:39.883Z",
+      "description": "Eating",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "type": "WITHDRAWL",
+      "amount": 24654,
+      "date": "2021-10-01T12:16:25.728Z",
+      "description": "",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "type": "WITHDRAWL",
+      "amount": 123,
+      "date": "2021-10-01T12:18:35.388Z",
+      "description": "",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:10.717Z",
+      "description": "",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:12.307Z",
+      "description": "",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:13.211Z",
+      "description": "",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:14.347Z",
+      "description": "",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:15.064Z",
+      "description": "",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:15.942Z",
+      "description": "",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:16.738Z",
+      "description": "",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:18.720Z",
+      "description": "",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:19.499Z",
+      "description": "",
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:28.731Z",
+      "description": "",
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:29.428Z",
+      "description": "",
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:29.915Z",
+      "description": "",
+      "id": 27
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:30.387Z",
+      "description": "",
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:30.794Z",
+      "description": "",
+      "id": 29
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:31.242Z",
+      "description": "",
+      "id": 30
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:31.682Z",
+      "description": "",
+      "id": 31
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:35.460Z",
+      "description": "",
+      "id": 32
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:35.990Z",
+      "description": "",
+      "id": 33
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:36.505Z",
+      "description": "",
+      "id": 34
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:36.940Z",
+      "description": "",
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:37.471Z",
+      "description": "",
+      "id": 36
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:37.956Z",
+      "description": "",
+      "id": 37
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:42.725Z",
+      "description": "",
+      "id": 38
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:43.218Z",
+      "description": "",
+      "id": 39
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:43.612Z",
+      "description": "",
+      "id": 40
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:44.495Z",
+      "description": "",
+      "id": 41
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:45.127Z",
+      "description": "",
+      "id": 42
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:45.752Z",
+      "description": "",
+      "id": 43
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 0,
+      "date": "2021-10-01T12:22:47.140Z",
+      "description": "",
+      "id": 44
+    }
+  ]
 }

@@ -32,7 +32,7 @@ function TransactionDialog(props) {
         const obj = {
             "userId": userprofile.id,
             "type": type,
-            "amount": amount,
+            "amount": Number(amount),
             "date": new Date(),
             "description": description
         }

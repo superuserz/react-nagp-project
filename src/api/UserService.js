@@ -38,6 +38,20 @@ class UserService {
         return data;
     }
 
+    async getTransactionsByUserId(userId) {
+        const data = await fetch('http://localhost:3001/transactions?userId=' + userId)
+            .then(response => response.json())
+            .then(response => {
+                return response;
+            })
+            .catch(err => {
+
+            });
+        return data;
+    }
+
+
+
     executeTransaction(payload) {
         fetch("http://localhost:3001/transactions", {
             method: "POST",
@@ -48,6 +62,11 @@ class UserService {
         }).then(
             response => { }
         );
+    }
+
+    invalidateUser = () => {
+        sessionStorage.removeItem(constants.LOGGED_IN_KEY);
+        sessionStorage.removeItem(constants.USER_DATA_KEY);
     }
 }
 
