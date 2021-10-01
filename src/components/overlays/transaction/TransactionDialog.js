@@ -12,7 +12,6 @@ function TransactionDialog(props) {
     const [type, setType] = useState('DEPOSIT');
     const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState('');
-    const [render, setRender] = useState(false);
 
     const handleCancelAction = () => {
         props.handleCancelAction();

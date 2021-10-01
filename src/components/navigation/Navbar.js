@@ -1,9 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 import classes from './Navbar.module.css'
+import * as constants from '../../shared/constants/AppConstants';
 
 function Navbar(props) {
 
 
+    const isLoggedIn = () => {
+        if (sessionStorage.getItem(constants.LOGGED_IN_KEY) === 'true') {
+            return true;
+        }
+        return false;
+    }
 
     return (
         <header className={classes.header}>
@@ -17,6 +24,11 @@ function Navbar(props) {
                     <li>
                         <NavLink activeClassName={classes.active} to="/login">
                             Login
+                        </NavLink>
+                    </li>
+                    <li hidden={isLoggedIn}>
+                        <NavLink activeClassName={classes.active} to="/home">
+                            Home
                         </NavLink>
                     </li>
                 </ul>
