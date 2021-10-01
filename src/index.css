@@ -24,3 +24,7 @@ p {
   color: #042b5f;
 }
 
+.required {
+  color: red;
+}
+

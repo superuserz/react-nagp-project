@@ -17,3 +17,8 @@
     justify-content: space-around;
     margin-top: 3%;
 }
+
+.main-view-responsive {
+    display: flex;
+    flex-direction: column;
+}

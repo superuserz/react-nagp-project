@@ -90,22 +90,22 @@ function Register() {
                 <div className="registration-container">
                     <div className="registration-form-container">
                         <div className="registration-form-input-container">
-                            <h4>Username</h4>
+                            <h4>Username<span className="required">*</span></h4>
                             <InputText id="username" name="username" value={formik.values.username} onChange={formik.handleChange}></InputText>
                             {getFormErrorMessage('username')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Date of Birth</h4>
+                            <h4>Date of Birth<span className="required">*</span></h4>
                             <Calendar id="dob" name="dob" dateFormat="dd/mm/yy" value={formik.values.dob} onChange={formik.handleChange} monthNavigator yearNavigator yearRange="1900:2021" />
                             {getFormErrorMessage('dob')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Gender</h4>
+                            <h4>Gender<span className="required">*</span></h4>
                             <Dropdown id="gender" name="gender" value={formik.values.gender} options={constants.GENDERS} onChange={formik.handleChange} placeholder="Select Gender" />
                             {getFormErrorMessage('gender')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Address</h4>
+                            <h4>Address<span className="required">*</span></h4>
                             <Dropdown id="city" name="city" value={formik.values.city} options={constants.STATES} onChange={formik.handleChange} placeholder="Select State" />
                             <Dropdown id="district" name="district" value={formik.values.district} options={constants.DISTRICTS} onChange={formik.handleChange} placeholder="Select District" />
                             {getFormErrorMessage('city')}
@@ -114,22 +114,22 @@ function Register() {
                     </div>
                     <div className="registration-form-container">
                         <div className="registration-form-input-container">
-                            <h4>Account Type</h4>
+                            <h4>Account Type<span className="required">*</span></h4>
                             <Dropdown id="accountType" name="accountType" value={formik.values.accountType} options={constants.ACCOUNT_TYPES} onChange={formik.handleChange} placeholder="Select Account Type" />
                             {getFormErrorMessage('accountType')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Account Number</h4>
+                            <h4>Account Number<span className="required">*</span></h4>
                             <InputText id="accountNumber" name="accountNumber" type="number" value={formik.values.accountNumber} onChange={formik.handleChange}></InputText>
                             {getFormErrorMessage('accountNumber')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Password</h4>
+                            <h4>Password<span className="required">*</span></h4>
                             <Password id="password" name="password" value={formik.values.password} onChange={formik.handleChange} />
                             {getFormErrorMessage('password')}
                         </div>
                         <div className="registration-form-input-container">
-                            <h4>Confirm Password</h4>
+                            <h4>Confirm Password<span className="required">*</span></h4>
                             <Password id="confirmPassword" name="confirmPassword" value={formik.values.confirmPassword} onChange={formik.handleChange} feedback={false} />
                             {getFormErrorMessage('confirmPassword')}
                         </div>

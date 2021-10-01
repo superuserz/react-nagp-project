@@ -83,8 +83,11 @@ function Home(props) {
                     <TransactionOverlay hideTransactionOverlay={hideTransactionOverlay} profile={userprofile} klass={klass} balance={balance}></TransactionOverlay>
                 </div>
             </div>
-            <Balance balance={balance}></Balance>
-            <TransactionDashboard transactions={transactions} profile={userprofile}></TransactionDashboard>
+            <div className="main-view-responsive">
+                <Balance balance={balance}></Balance>
+                <TransactionDashboard transactions={transactions} profile={userprofile}></TransactionDashboard>
+            </div>
+
         </div>
     )
 }

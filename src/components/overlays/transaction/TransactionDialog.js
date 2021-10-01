@@ -25,6 +25,10 @@ function TransactionDialog(props) {
             "date": new Date(),
             "description": description
         }
+        if (amount < 1) {
+            messages.current.show({ severity: 'error', summary: 'Please Enter a Valid Non-Zero Amount' });
+            return;
+        }
         if (props.balance - amount < 0 && type === 'WITHDRAWL') {
             messages.current.show({ severity: 'error', summary: 'Insufficient Balance' });
             return;
@@ -56,7 +60,7 @@ function TransactionDialog(props) {
                 <InputText id="balance" name="balance" disabled={true} type="text" value={props.balance}></InputText>
             </div>
             <div className="main">
-                <label>Transaction Amount</label>
+                <label>Transaction Amount<span className="required">*</span></label>
                 <InputText id="amount" name="amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter Amount"></InputText>
             </div>
             <div className="main">
