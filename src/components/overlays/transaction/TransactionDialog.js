@@ -12,6 +12,7 @@ function TransactionDialog(props) {
     const [type, setType] = useState('DEPOSIT');
     const [amount, setAmount] = useState(0);
     const [description, setDescription] = useState('');
+    const [render, setRender] = useState(false);
 
     const handleCancelAction = () => {
         props.handleCancelAction();
@@ -24,6 +25,14 @@ function TransactionDialog(props) {
             "amount": Number(amount),
             "date": new Date(),
             "description": description
+        }
+        if (props.balance - amount < 0 && type === 'WITHDRAWL') {
+            messages.current.show({ severity: 'error', summary: 'Insufficient Balance' });
+            return;
+        }
+        if (props.balance < 10000 && type === 'WITHDRAWL') {
+            messages.current.show({ severity: 'error', summary: 'Withrawl not Allowed. Balance should be above 10,000 INR' });
+            return;
         }
         userService.executeTransaction(obj);
         messages.current.show({ severity: 'success', summary: 'Transaction Successful' });
