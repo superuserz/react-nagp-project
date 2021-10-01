@@ -56,7 +56,7 @@ function TransactionDialog(props) {
             </div>
             <div className="main">
                 <label>Current Balance in Account</label>
-                <InputText id="balance" name="balance" disabled={true} type="text" value="100.00"></InputText>
+                <InputText id="balance" name="balance" disabled={true} type="text" value={props.balance}></InputText>
             </div>
             <div className="main">
                 <label>Transaction Amount</label>

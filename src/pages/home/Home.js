@@ -6,12 +6,15 @@ import * as constants from '../../shared/constants/AppConstants';
 import TransactionOverlay from '../../components/overlays/transaction/TransactionOverlay';
 import TransactionDashboard from '../../components/transaction/TransactionDashboard';
 import { userService } from '../../api/UserService';
+import Balance from '../../components/transaction/Balance';
 
 function Home(props) {
 
     const [userprofile, setUserprofile] = useState({});
     const [klass, setKlass] = useState('transaction-overlay-hidden');
-
+    const [transactions, setTransactions] = useState([]);
+    const [balance, setBalance] = useState(0);
+    const history = useHistory();
 
     useEffect(() => {
         setUserprofile((prevVal) => {
@@ -25,7 +28,24 @@ function Home(props) {
         })
     }, [])
 
-    const history = useHistory();
+
+    //Effect to set Transaction & Balance Data
+    useEffect(() => {
+        const userprofile = JSON.parse(sessionStorage.getItem(constants.USER_DATA_KEY));
+        if (userprofile) {
+            userService.getTransactionsByUserId(userprofile.id).then(response => {
+                setTransactions(response);
+                const withdrawls = response.filter(transaction => transaction.type === 'WITHDRAWL').reduce(((acc, emp) => acc + Number(emp.amount)), 0);
+                const deposits = response.filter(transaction => transaction.type === 'DEPOSIT').reduce(((acc, emp) => acc + Number(emp.amount)), 0);
+                setBalance(deposits - withdrawls);
+            })
+        } else {
+            history.push('/login');
+        }
+
+    }, []);
+
+
     const dispatchProfile = () => {
         history.push('/profile');
     }
@@ -59,10 +79,11 @@ function Home(props) {
                     <Button type="submit" label="My Profile" className="p-mt-2" onClick={dispatchProfile} />
                     <Button type="submit" label="Withdraw/ Deposit" className="p-mt-2 p-button-success" onClick={showTransactionOverlay} />
                     <Button type="submit" label="Logout" className="p-mt-2 p-button-danger" onClick={handleLogout} />
-                    <TransactionOverlay hideTransactionOverlay={hideTransactionOverlay} klass={klass}></TransactionOverlay>
+                    <TransactionOverlay hideTransactionOverlay={hideTransactionOverlay} klass={klass} balance={balance}></TransactionOverlay>
                 </div>
             </div>
-            <TransactionDashboard></TransactionDashboard>
+            <Balance balance={balance}></Balance>
+            <TransactionDashboard transactions={transactions}></TransactionDashboard>
         </div>
     )
 }

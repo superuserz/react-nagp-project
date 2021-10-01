@@ -389,6 +389,22 @@
       "date": "2021-10-01T12:22:47.140Z",
       "description": "",
       "id": 44
+    },
+    {
+      "userId": 1,
+      "type": "WITHDRAWL",
+      "amount": 1000,
+      "date": "2021-10-01T12:52:06.658Z",
+      "description": "",
+      "id": 45
+    },
+    {
+      "userId": 1,
+      "type": "DEPOSIT",
+      "amount": 10000,
+      "date": "2021-10-01T12:53:23.415Z",
+      "description": "",
+      "id": 46
     }
   ]
 }
